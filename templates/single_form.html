@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    {% if title %}
+    <h1 class="text-align">{{ title }}</h1>
+    {% endif %}
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input class="btn btn-default" type="submit" name="name" value="登録">
+    </form>
+  </div>
+</div>

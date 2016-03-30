@@ -5,6 +5,7 @@ from .views import (
     BookList,
     BookCreate,
     BookUpdate,
+    BookDelete,
 )
 
 urlpatterns = [
@@ -13,4 +14,6 @@ urlpatterns = [
     url(r'^book/update/(?P<slug>[-\w]+)/$',
         BookUpdate.as_view(), name='book_update'),
     url(r'^book/(?P<slug>[-\w]+)/$', BookDetail.as_view(), name='book_detail'),
+    url(r'^book/delete/(?P<slug>[-\w]+)/$',
+        BookDelete.as_view(), name='book_delete'),
 ]

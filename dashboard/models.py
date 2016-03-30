@@ -18,7 +18,7 @@ class Book(models.Model):
         null=True, blank=True, related_name='book_edit')
     title = models.CharField(max_length=120)
     description = models.TextField(blank=True)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 

@@ -70,5 +70,5 @@ celerybeat-schedule
 node_modules/
 .sass-cache/
 
-newsletter/migrations/*
-!newsletter/migrations/__init__.py
+*/migrations/*
+!*/migrations/__init__.py
