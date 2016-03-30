@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
 from .forms import (
     SingUpForm,
     ContactForm,
@@ -42,6 +44,7 @@ def home(request):
     return render(request, 'newsletter/home.html', context)
 
 
+@login_required
 def contact(request):
     title = 'Contact Us'
     form = ContactForm(request.POST or None)
@@ -72,8 +75,3 @@ def contact(request):
         'title': title,
     }
     return render(request, 'newsletter/forms.html', context)
-
-
-def about(request):
-
-    return render(request, 'newsletter/about.html', {})
